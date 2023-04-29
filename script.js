@@ -1,4 +1,5 @@
 let num1, num2, operator;
+const container = document.querySelector('.display');
 
 function addMath(a, b) {
     return a + b;
@@ -31,14 +32,11 @@ function operate (num1, num2, operator) {
     }
 }
 
-function display () {
-
-}
-
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         console.log(button.dataset.value);
-        return button;
+        return container.textContent = button.dataset.value;
     });
-});
+})
+
