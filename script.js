@@ -30,3 +30,15 @@ function operate (num1, num2, operator) {
         return divideMath(num1, num2);
     }
 }
+
+function display () {
+
+}
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        console.log(button.dataset.value);
+        return button;
+    });
+});
