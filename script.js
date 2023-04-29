@@ -11,6 +11,10 @@
 //    return array.reduce((total, current) => total + current, 0);
 //  };
 
+// function powerMath (a, b) {
+// return Math.pow(a, b);
+// };
+
 function addMath(a, b) {
     return a + b;
 };
@@ -25,7 +29,11 @@ return array.length
     : 0;
 };
 
-function powerMath (a, b) {
-return Math.pow(a, b);
-};
+function divideMath(a, b) {
+    return a / b;
+}
 
+function operate (num1, num2) {
+    let num1, num2, operator;
+    return 
+}
