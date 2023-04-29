@@ -1,19 +1,4 @@
-// function factorialMath (n) {
-// if (n === 0) return 1;
-// let product = 1;
-// for (let i = n; i > 0; i--) {
-//    product *= i;
-// }
-// return product;
-// };
-
-//function sumMath (array) {
-//    return array.reduce((total, current) => total + current, 0);
-//  };
-
-// function powerMath (a, b) {
-// return Math.pow(a, b);
-// };
+let num1, num2, operator;
 
 function addMath(a, b) {
     return a + b;
