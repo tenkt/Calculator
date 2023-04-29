@@ -1,0 +1,75 @@
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 450px;
+    height: 450px;
+}
+
+.display-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 3px solid darkred;
+    width: 200px;
+    height: 40px;
+    padding: 2px;
+    margin-bottom: 2px;
+}
+
+.display {
+    font-size: 50px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+    margin: 1px;
+}
+.clear-delete-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.clear-delete-button {
+    width: 103px;
+    height: 40px;
+    margin-bottom: 1px;
+}
+
+.row7-container {
+}
+
+.row4-container {
+}
+
+.row1-container {
+}
+
+.row0-container {
+}
+
+.row7-container,
+.row4-container,
+.row1-container,
+.row0-container {
+    display: flex;
+    justify-content: space-evenly;
+
+}
