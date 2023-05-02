@@ -37,7 +37,7 @@ body, html {
     width: 210px;
 }
 
-.button {
+.button, .symbol, .equal {
     height: 50px;
     width: 50px;
     margin: 1px;
@@ -47,7 +47,7 @@ body, html {
     justify-content: space-evenly;
 }
 
-.clear-delete-button {
+.clear, .delete {
     width: 103px;
     height: 40px;
     margin-bottom: 1px;
