@@ -1,42 +1,55 @@
-let num1, num2, operator;
+let num1 = '';
+let num2 = '';
+let currentValue = '';
 const container = document.querySelector('.display');
-
-function addMath(a, b) {
-    return a + b;
-};
-
-function subtractMath(a, b) {
-    return a - b;
-};
-
-function multiplyMath (a, b) {
-return a * b;
-};
-
-function divideMath(a, b) {
-    return a / b;
-}
-
-function operate (num1, num2, operator) {
-    if (operator === addMath) {
-        return addMath(num1, num2);
-    }
-    if (operator === subtractMath) {
-        return subtractMath(num1, num2);
-    }
-    if (operator === multiplyMath) {
-        return multiplyMath(num1, num2);
-    }
-    if (operator === divideMath) {
-        return divideMath(num1, num2);
-    }
-}
-
-const buttons = document.querySelectorAll('button');
+const clearAll = document.querySelector('.clear');
+const signs = document.querySelectorAll('.symbol');
+const buttons = document.querySelectorAll('.button');
+    
 buttons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        console.log(button.dataset.value);
-        return container.textContent = button.dataset.value;
+    button.addEventListener('click', () => {
+        container.textContent += button.dataset.value; 
     });
-})
+});
+signs.forEach((symbol) => {
+    symbol.addEventListener('click', (e) => {
+        operator = symbol.dataset.value;
+        currentValue = num1 + operator
+        console.log(currentValue)
+    });
+});
 
+function operate(num1, num2, operator) {
+    if (operator = "+") {
+        return addMath(num1, num2)
+    } if (operator === "-") {
+        return subtractMath(num1, num2)
+    } if (operator === "x") {
+        return multiplyMath(num1, num2)
+    } if (operator === "/") {
+        return divideMath(num1, num2 )
+    };
+};
+
+function addMath(num1, num2) {
+    return num1 + num2;
+};
+
+function subtractMath(num1, num2) {
+    return num1 - num2;
+};
+
+function multiplyMath (num1, num2) {
+return num1 * num2;
+};
+
+function divideMath(num1, num2) {
+    return num1 / num2;
+}
+
+clear = () => {
+    return container.textContent = '';
+};
+clearAll.addEventListener('click', () => {
+    clear();
+})
