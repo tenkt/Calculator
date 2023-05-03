@@ -3,6 +3,7 @@ let secondNum = '';
 let operator = '';
 let currentDisplay = document.querySelector('.current');
 const equal = document.querySelector('.equal');
+const deletebtn = document.querySelector('.delete');
 const clear = document.querySelector('.clear');
 const operators = document.querySelectorAll('.opera');
 const buttons = document.querySelectorAll('.button');
@@ -10,6 +11,7 @@ const buttons = document.querySelectorAll('.button');
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         equation = currentDisplay.textContent += button.dataset.value;
+        console.log(equation)
         numArray = equation.split(" ")
         firstNum = Number(numArray[0])
         operator = numArray [1]
@@ -60,6 +62,16 @@ function divideMath(firstNum, secondNum) {
     return firstNum / secondNum;
 }
 
+deletebtn.addEventListener('click', () => {
+    currentDisplay.textContent = currentDisplay.textContent.slice(0, -1);
+    if (firstNum + operator) {
+        deleteop()
+    };
+})
+
+deleteop = () => {
+    currentDisplay.textContent.slice(-3, -1);
+};
 clear.addEventListener('click', () => {
     currentDisplay.textContent = '';
     firstNum = '';
