@@ -1,36 +1,30 @@
 let firstNum = '';
 let secondNum = '';
 let operator = '';
-//let numArray = []
 let currentDisplay = document.querySelector('.current');
 const equal = document.querySelector('.equal');
 const clear = document.querySelector('.clear');
 const operators = document.querySelectorAll('.opera');
 const buttons = document.querySelectorAll('.button');
 
-
-
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         equation = currentDisplay.textContent += button.dataset.value;
         numArray = equation.split(" ")
-        firstNum = numArray[0]
+        firstNum = Number(numArray[0])
         operator = numArray [1]
-        secondNum = numArray[2]
+        secondNum = Number(numArray[2])
         equal.addEventListener('click', () => {
-            operate(firstNum, secondNum, operator)
+           currentDisplay.textContent = operate(firstNum, secondNum, operator)
         })
     });
 });
 
-
-
 function opHold(opera) {
     operator = opera
     currentDisplay.textContent += " " + operator + " "
-   
 }
-console.log(currentDisplay.textContent)
+
 operators.forEach((opera) => {
     opera.addEventListener('click', (e) => {
         opHold(e.target.textContent);
@@ -38,38 +32,37 @@ operators.forEach((opera) => {
     });
 });
 
-
-
-function operate(num1, num2, operator) {
-    if (operator = "+") {
-        return addMath(num1, num2)
+function operate(firstNum, secondNum, operator) {
+    if (operator === "+") {
+        return addMath(firstNum, secondNum)
     } if (operator === "-") {
-        return subtractMath(num1, num2)
+        return subtractMath(firstNum, secondNum)
     } if (operator === "x") {
-        return multiplyMath(num1, num2)
+        return multiplyMath(firstNum, secondNum)
     } if (operator === "/") {
-        return divideMath(num1, num2 )
+        return divideMath(firstNum, secondNum)
     };
 };
 
-function addMath(num1, num2) {
-    return num1 + num2;
+function addMath(firstNum, secondNum) {
+    return firstNum + secondNum;
 };
 
-function subtractMath(num1, num2) {
-    return num1 - num2;
+function subtractMath(firstNum, secondNum) {
+    return firstNum - secondNum;
 };
 
-function multiplyMath (num1, num2) {
-return num1 * num2;
+function multiplyMath (firstNum, secondNum) {
+return firstNum * secondNum;
 };
 
-function divideMath(num1, num2) {
-    return num1 / num2;
+function divideMath(firstNum, secondNum) {
+    return firstNum / secondNum;
 }
 
 clear.addEventListener('click', () => {
     currentDisplay.textContent = '';
     firstNum = '';
+    secondNum = '';
     operator = '';
 });
